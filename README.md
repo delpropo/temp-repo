@@ -1,9 +1,10 @@
 # Reproducible analysis example - Python
+# change made for branch one
 
-This is an example project repository to illustrate what a reproducible analysis might look like as discussed in more detail in the [Reproducibility in Cancer Informatics course](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics).  
+This is an example project repository to illustrate what a reproducible analysis might look like as discussed in more detail in the [Reproducibility in Cancer Informatics course](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics).
 It can be used as a template or otherwise borrowed from.
 
-_This example analysis:_  
+_This example analysis:_
 
 - Downloads [data from refine.bio](https://www.refine.bio/experiments/SRP070849/combination-targeted-therapy-to-disrupt-aberrant-oncogenic-signaling-and-reverse-epigenetic-dysfunction-in-idh2-and-tet2-mutant-acute-myeloid-leukemia-rna-seq) using the [refine.bio python API client](https://github.com/AlexsLemonade/refinebio-py).
 - Identifies the top 90th percentile variant genes from the set.
@@ -46,7 +47,7 @@ git clone https://github.com/jhudsl/reproducible-python-example.git
 ```
 cd reproducible-python-example
 ```
-3. Use the following command to run the analysis:  
+3. Use the following command to run the analysis:
 ```
 docker run \
 --mount type=bind,target=/home/jovyan/work,source=$PWD \
@@ -63,7 +64,7 @@ It is RNA-seq data from 19 acute myeloid leukemia (AML) mice models.
 
 ### Output
 
-Two directories are created by this analysis and hold the output:  
+Two directories are created by this analysis and hold the output:
 
 `plots/` - contains the heatmap png: `aml_heatmap.png`
 `results/` - contains the TSV file list of most variant genes: `top_90_var_genes.tsv`
@@ -115,7 +116,7 @@ Running `docker ps` should show you the `jhudsl/reproducible-python` listed with
 
 ## Github actions
 
-There are two main GitHub actions in this repository:  
+There are two main GitHub actions in this repository:
 
 - `docker-management.yml` - Tests the building of the docker image upon changes to the `Dockerfile` being added to a pull request.
 - `run-py-notebook.yml` - Re-runs the analysis by running `make_heatmap.ipynb` within the docker image (using the [command described above](#how-to-run-the-analysis)).
